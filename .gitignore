@@ -1,1 +1,7 @@
 .DS_Store
+/node_module*
+/coverage
+.env.*
+*.log
+/build
+package-lock.json
