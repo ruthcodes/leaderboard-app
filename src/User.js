@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import './bootstrap.min.css';
+import './App.css';
 
 export class User extends Component{
   componentWillMount(){
@@ -9,13 +10,17 @@ export class User extends Component{
   render(){
     return (
       <Grid>
-        <Row>
-          <Col sm={3} md={3} lg={3} xl={3}>Name goes here</Col>
-          <Col sm={3} md={3} lg={3} xl={3}>Icon goes here</Col>
-          <Col sm={3} md={3} lg={3} xl={3}>Total points goes here</Col>
-          <Col sm={3} md={3} lg={3} xl={3}>Points this month goes here</Col>
+        <Row className="allUsers">
+          <Col className="userDetails" xs={12} sm={6} md={3} lg={3} xl={3}>Name:{this.props.userName}</Col>
+          <Col className="userDetails" xs={12} sm={6} md={3} lg={3} xl={3}>Icon: {this.props.userIcon}</Col>
+          <Col className="userDetails" xs={12} sm={6} md={3} lg={3} xl={3}>Total points: {this.props.userPoints}</Col>
+          <Col className="userDetails" xs={12} sm={6} md={3} lg={3} xl={3}>Points this month: {this.props.userPointsRecent}</Col>
         </Row>
       </Grid>
     );
+  }
+
+  componentWillUpdate(){
+    //another api call. Possibly unecessary
   }
 }
