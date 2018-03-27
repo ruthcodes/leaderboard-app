@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-class Hello extends Component {
+class App extends Component {
   render() {
     return (
       <div className="App">
@@ -18,4 +18,4 @@ class Hello extends Component {
   }
 }
 
-export default Hello;
+export default App;
