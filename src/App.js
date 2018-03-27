@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import './App.css';
 import { MyButton } from './Button';
 import { User } from './User';
-import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import './bootstrap.min.css';
 
 class List extends Component {
@@ -10,10 +9,12 @@ class List extends Component {
     super(props);
 
     this.state = {
-          userName: ["roo", "beh", "cas", "mum", "dad"],
-          userIcon: ["ash", "goo", "gas", "cor", "ste"],
-          userPoints: [30, 40, 20, 50, 10],
-          userPointsRecent: [5, 2, 20, 20, 15]
+      myUser: [
+          {userName: ["roo", "beh", "cas", "mum", "dad"]},
+          {userIcon: ["ash", "goo", "gas", "cor", "ste"]},
+          {userPoints: [30, 40, 20, 50, 10]},
+          {userPointsRecent: [5, 2, 20, 20, 15]}
+        ]
     };
 
     this.handleClick = this.handleClick.bind(this);
@@ -28,10 +29,10 @@ class List extends Component {
   renderUsers(i) {
   return (
     <User
-      userName={this.state.userName[i]}
-      userIcon={this.state.userIcon[i]}
-      userPoints={this.state.userPoints[i]}
-      userPointsRecent={this.state.userPointsRecent[i]}
+      userName={this.state.myUser[0].userName[i]}
+      userIcon={this.state.myUser[1].userIcon[i]}
+      userPoints={this.state.myUser[2].userPoints[i]}
+      userPointsRecent={this.state.myUser[3].userPointsRecent[i]}
     />
   );
 }
