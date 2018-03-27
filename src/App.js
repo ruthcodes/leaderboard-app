@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import { User } from './User';
 import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import './bootstrap.min.css';
 
@@ -19,6 +20,7 @@ class List extends Component {
     };
 
     this.handleUserInput = this.handleUserInput.bind(this);
+    
   }
 
   handleUserInput(e){
@@ -39,7 +41,9 @@ class List extends Component {
 
   render() {
     return (
-      Array.from(Array(10), (_, x) => this.renderUsers[x])
+      <div>{ this.renderUsers(0) }</div>
+
+      //Array.from(Array(10), (_, x) => this.renderUsers[x])
     );
   }
 }
