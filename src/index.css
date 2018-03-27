@@ -3,3 +3,32 @@ body {
   padding: 0;
   font-family: sans-serif;
 }
+
+.userDetails{
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.allUsers{
+  margin: 15px;
+}
+
+.userDetails:nth-child(1){
+  background-color: red;
+}
+
+.userDetails:nth-child(2){
+  background-color: orange;
+}
+
+.userDetails:nth-child(3){
+  background-color: yellow;
+}
+
+.userDetails:nth-child(4){
+  background-color: green;
+}
+
+.alignButtons{
+  text-align: center;
+}
