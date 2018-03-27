@@ -1,21 +1,47 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
+import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
+import './bootstrap.min.css';
 
-class App extends Component {
+class List extends Component {
+  constructor(props){
+    super(props);
+
+    this.state ={
+      chosenUser:[
+        {
+          userName: [],
+          userIcon: [],
+          userPoints: [],
+          userPointsRecent: []
+        }
+      ]
+    };
+
+    this.handleUserInput = this.handleUserInput.bind(this);
+  }
+
+  handleUserInput(e){
+    this.setState({
+      //this needs to be set and sort based on button click
+    });
+  }
+  renderUsers(i) {
+  return (
+    <User
+      userName={this.userName[i]}
+      userIcon={this.userIcon[i]}
+      userPoints={this.userPoints[i]}
+      userPointsRecent={this.userPointsRecent[i]}
+    />
+  );
+}
+
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h1 className="App-title">Welcome to React</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      Array.from(Array(10), (_, x) => this.renderUsers[x])
     );
   }
 }
 
-export default App;
+export default List;
