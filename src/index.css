@@ -7,6 +7,7 @@ body {
 .userDetails{
   padding: 5px;
   border: 2px solid black;
+  height: 70px;
 }
 
 .allUsers{
@@ -34,6 +35,6 @@ body {
 }
 
 img{
-  height: 15px;
-  width: 15px;
+  height: 55px;
+  width: 55px;
 }
