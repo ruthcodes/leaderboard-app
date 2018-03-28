@@ -28,50 +28,34 @@ class List extends Component {
     fetch('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
     .then((response) => response.json())
     .then((responseJson) => {
-      this.setState({
-        'userName': responseJson[0].username,
-        'userIcon': responseJson[0].img,
-        'userPoints': responseJson[0].alltime,
-        'userPointsRecent': responseJson[0].recent
-      });
-    });
+      var name = responseJson.map(a => a.username);
+      var icon = responseJson.map(a => a.img);
+      var alltime = responseJson.map(a => a.alltime);
+      var recent = responseJson.map(a => a.recent);
 
+
+    this.setState({
+      'userName': name,
+      'userIcon': icon,
+      'userPoints': alltime,
+      'userPointsRecent': recent
+    });
+    })
   }
 
 
   renderUsers(i) {
-  /*  let combined = [];
-    let name = this.state.userName.slice();
-    let icon = this.state.userIcon.slice();
-    let points = this.state.userPoints.slice();
-    let recentPoints = this.state.userPointsRecent.slice();
-    name.forEach((element, index) => {
-      combined.push({'userName': name[index], 'userIcon': icon[index], 'userPoints': points[index], 'userPointsRecent': recentPoints[index]});
-    });
-    combined.sort(function (a,b){
-      return b.userPoints - a.userPoints;
-    })
-    combined.forEach((element, index) => {
-      this.setState({
-        userName: combined[index].userName,
-        userIcon: combined[index].userIcon,
-        userPoints: combined[index].userPoints,
-        userPointsRecent: combined[index].userPointsRecent
-      })
-    });*/
-
     return (
       <User
-        userName={this.state.userName}
-        userIcon={this.state.userIcon}
-        userPoints={this.state.userPoints}
-        userPointsRecent={this.state.userPointsRecent}
+        userName={this.state.userName[i]}
+        userIcon={this.state.userIcon[i]}
+        userPoints={this.state.userPoints[i]}
+        userPointsRecent={this.state.userPointsRecent[i]}
       />
     );
   }
 
   render() {
-
     return (
       <div>
         {Array.from(Array(5), (_, x) => this.renderUsers(x))}
