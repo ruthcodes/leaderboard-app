@@ -9,10 +9,10 @@ export class MyButton extends Component{
       <Grid>
         <Row className="alignButtons">
           <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-            <Button>Sort by all time points</Button>
+            <Button id="allTime" onClick={this.props.onClick}>Sort by all time points</Button>
           </Col>
           <Col xs={12} sm={6} md={6} lg={6} xl={6}>
-            <Button>Sort by points this month</Button>
+            <Button id="recent" onClick={this.props.onClick}>Sort by recent points</Button>
           </Col>
         </Row>
       </Grid>

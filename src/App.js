@@ -19,19 +19,38 @@ class List extends Component {
   }
 
   handleClick(e){
+    let url;
+    if (e.target.id == "allTime"){
+      url = 'https://fcctop100.herokuapp.com/api/fccusers/top/alltime';
+    } else {
+      url = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
+    }
+    fetch(url)
+    .then((response) => response.json())
+    .then((responseJson) => {
+      let name = responseJson.map(a => a.username);
+      let icon = responseJson.map(a => a.img);
+      let alltime = responseJson.map(a => a.alltime);
+      let recent = responseJson.map(a => a.recent);
+
+
     this.setState({
-      //this needs to be set and sort based on button click
+      'userName': name,
+      'userIcon': icon,
+      'userPoints': alltime,
+      'userPointsRecent': recent
     });
+    })
   }
 
   componentWillMount(){
     fetch('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
     .then((response) => response.json())
     .then((responseJson) => {
-      var name = responseJson.map(a => a.username);
-      var icon = responseJson.map(a => a.img);
-      var alltime = responseJson.map(a => a.alltime);
-      var recent = responseJson.map(a => a.recent);
+      let name = responseJson.map(a => a.username);
+      let icon = responseJson.map(a => a.img);
+      let alltime = responseJson.map(a => a.alltime);
+      let recent = responseJson.map(a => a.recent);
 
 
     this.setState({
@@ -59,7 +78,7 @@ class List extends Component {
     return (
       <div>
         {Array.from(Array(5), (_, x) => this.renderUsers(x))}
-        <MyButton />
+        <MyButton onClick={this.handleClick} />
       </div>
     );
   }
