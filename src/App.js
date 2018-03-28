@@ -17,6 +17,7 @@ class List extends Component {
     };
 
     this.handleClick = this.handleClick.bind(this);
+    this.fetchData = this.fetchData.bind(this);
   }
 
   handleClick(e){
@@ -26,6 +27,10 @@ class List extends Component {
     } else {
       url = 'https://fcctop100.herokuapp.com/api/fccusers/top/recent';
     }
+    this.fetchData(url);
+  }
+
+  fetchData(url){
     fetch(url)
     .then((response) => response.json())
     .then((responseJson) => {
@@ -33,7 +38,6 @@ class List extends Component {
       let icon = responseJson.map(a => a.img);
       let alltime = responseJson.map(a => a.alltime);
       let recent = responseJson.map(a => a.recent);
-
 
     this.setState({
       'userName': name,
@@ -45,22 +49,7 @@ class List extends Component {
   }
 
   componentWillMount(){
-    fetch('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
-    .then((response) => response.json())
-    .then((responseJson) => {
-      let name = responseJson.map(a => a.username);
-      let icon = responseJson.map(a => a.img);
-      let alltime = responseJson.map(a => a.alltime);
-      let recent = responseJson.map(a => a.recent);
-
-
-    this.setState({
-      'userName': name,
-      'userIcon': icon,
-      'userPoints': alltime,
-      'userPointsRecent': recent
-    });
-    })
+    this.fetchData('https://fcctop100.herokuapp.com/api/fccusers/top/alltime')
   }
 
 
