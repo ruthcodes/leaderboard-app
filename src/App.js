@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { MyButton } from './Button';
 import { User } from './User';
+import { Grid, Row, Col } from 'react-bootstrap';
 import './bootstrap.min.css';
 
 class List extends Component {
@@ -77,7 +78,14 @@ class List extends Component {
   render() {
     return (
       <div>
-        {Array.from(Array(5), (_, x) => this.renderUsers(x))}
+        <Grid>
+          <Row>
+            <Col sm={2} md={2} lg={2} xl={2}></Col>
+            <Col xs={6} sm={6} md={6} lg={6} xl={6}>Username</Col>
+            <Col xs={6} sm={4} md={4} lg={4} xl={4}>Points</Col>
+          </Row>
+        </Grid>
+        {Array.from(Array(10), (_, x) => this.renderUsers(x))}
         <MyButton onClick={this.handleClick} />
       </div>
     );
