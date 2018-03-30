@@ -1,33 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato');
+
+@font-face{
+	font-family: 'saxmono';
+	src: url('saxmono-webfont.woff') format('woff');
+}
+
 body {
   margin: 0;
-  padding: 0;
-  font-family: sans-serif;
+
 }
 
 .userDetails{
   padding: 5px;
-  border: 2px solid black;
   height: 70px;
+  line-height: 40px;
+  font-family: 'Lato', sans-serif;
+}
+
+/*.allUsers{
+  margin: 15px;
+  background-color: #E0E0E0;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
+            10px 10px 15px rgba(0,0,0,0.5),
+            -1px -1px 30px rgba(0,0,0,0.2);
+}*/
+
+.headers{
+  text-align: center;
+  font-family: 'saxmono', sans-serif;
+}
+
+.jumbotron{
+  background-color: #006400 !important;
+  color: #FFFFFF;
+}
+
+h1{
+  padding-top: 20px;
+  padding-bottom: 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+
+.buttons{
+  margin-top: 20px;
+  margin-bottom: 30px;
+  font-family: 'Lato', sans-serif;
+}
+
+.btn{
+  border: 1px solid #006400 !important;
+  color: #006400 !important;
+}
+
+.btn:hover{
+  background-color: #006400 !important;
+  color: white !important;
+}
+
+.myTitle{
+  background-color: #006400;
+  color: #FFFFFF;
+}
+
+.userList{
+  padding: 35px;
 }
 
 .allUsers{
-  margin: 15px;
+
+  border-bottom: 1px solid #DEDEDE;
 }
 
-.userDetails:nth-child(1){
-  background-color: red;
+.allUsers:nth-child(odd){
+  background-color: #F9F9F9;
 }
 
-.userDetails:nth-child(2){
-  background-color: orange;
-}
-
-.userDetails:nth-child(3){
-  background-color: yellow;
-}
-
-.userDetails:nth-child(4){
-  background-color: green;
+.allUsers:nth-child(1){
+  border-top: 2px solid #DEDEDE;
 }
 
 .alignButtons{

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { MyButton } from './Button';
 import { User } from './User';
-import { Grid, Row, Col } from 'react-bootstrap';
+import { Grid, Row, Col, Jumbotron } from 'react-bootstrap';
 import './bootstrap.min.css';
 
 class List extends Component {
@@ -67,15 +67,23 @@ class List extends Component {
   render() {
     return (
       <div>
-        <Grid>
-          <Row>
-            <Col sm={2} md={2} lg={2} xl={2}></Col>
-            <Col xs={6} sm={6} md={6} lg={6} xl={6}>Username</Col>
-            <Col xs={6} sm={4} md={4} lg={4} xl={4}>Points</Col>
+        <Jumbotron>
+          <Grid>
+            <Row className="headers">
+              <Col className="myTitle" sm={12} md={12} lg={12} xl={12}><h1>freeCodeCamp Leaderboard</h1></Col>
+            </Row>
+          </Grid>
+        </Jumbotron>
+          <Grid>
+            <Row>
+            <Col sm={12} md={12} lg={12} xl={12} className="buttons">
+              <MyButton onClick={this.handleClick} />
+            </Col>
           </Row>
         </Grid>
-        {Array.from(Array(10), (_, x) => this.renderUsers(x))}
-        <MyButton onClick={this.handleClick} />
+        <div className="userList">
+          {Array.from(Array(10), (_, x) => this.renderUsers(x))}
+        </div>
       </div>
     );
   }
