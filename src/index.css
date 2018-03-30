@@ -17,16 +17,6 @@ body {
   font-family: 'Lato', sans-serif;
 }
 
-/*.allUsers{
-  margin: 15px;
-  background-color: #E0E0E0;
-  text-align: center;
-  border-radius: 10px;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.5),
-            10px 10px 15px rgba(0,0,0,0.5),
-            -1px -1px 30px rgba(0,0,0,0.2);
-}*/
-
 .headers{
   text-align: center;
   font-family: 'saxmono', sans-serif;
@@ -35,6 +25,7 @@ body {
 .jumbotron{
   background-color: #006400 !important;
   color: #FFFFFF;
+  margin-bottom: 0 !important;
 }
 
 h1{
@@ -53,6 +44,7 @@ h1{
 .btn{
   border: 1px solid #006400 !important;
   color: #006400 !important;
+  margin-top: 20px;
 }
 
 .btn:hover{
@@ -66,11 +58,13 @@ h1{
 }
 
 .userList{
-  padding: 35px;
+  margin-top:0;
+  padding-left: 35px;
+  padding-right: 35px;
 }
 
 .allUsers{
-
+  text-align: center;
   border-bottom: 1px solid #DEDEDE;
 }
 
@@ -80,7 +74,17 @@ h1{
 
 .allUsers:nth-child(1){
   border-top: 2px solid #DEDEDE;
+  background-color: #CDAD00;
 }
+
+.allUsers:nth-child(2){
+  background-color: #c0c0c0;
+}
+
+.allUsers:nth-child(3){
+  background-color: #cd7f32;
+}
+
 
 .alignButtons{
   text-align: center;
@@ -89,4 +93,34 @@ h1{
 img{
   height: 55px;
   width: 55px;
+}
+
+.tableHeads{
+  background-color: #006400;
+  color: #FFFFFF;
+  height: 60px;
+  line-height: 60px;
+  margin-left: 20px !important;
+  margin-right: 20px !important;
+}
+
+h2{
+  font-size: 20px !important;
+  text-align: center;
+}
+
+@media (max-width: 600px) {
+  h2{
+    font-size: 15px !important;
+  }
+}
+
+@media (max-width: 490px) {
+  h2{
+    font-size: 8px !important;
+  }
+
+  .allUsers{
+    font-size: 10px;
+  }
 }
