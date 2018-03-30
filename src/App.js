@@ -56,6 +56,7 @@ class List extends Component {
   renderUsers(i) {
     return (
       <User
+        rank={parseInt([i]) + 1}
         userName={this.state.userName[i]}
         hyperLink={"https://www.freecodecamp.org/" + this.state.userName[i]}
         userIcon={this.state.userIcon[i]}
@@ -83,7 +84,8 @@ class List extends Component {
           </Row>
         </Grid>
         <Row className="tableHeads">
-          <Col xs={8} sm={8} md={8} lg={8} xl={8}></Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}><h2>#</h2></Col>
+          <Col xs={6} sm={6} md={6} lg={6} xl={6}></Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}><h2>Total</h2></Col>
           <Col xs={2} sm={2} md={2} lg={2} xl={2}><h2>Recent</h2></Col>
         </Row>
