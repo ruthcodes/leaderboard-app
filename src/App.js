@@ -57,6 +57,7 @@ class List extends Component {
     return (
       <User
         userName={this.state.userName[i]}
+        hyperLink={"https://www.freecodecamp.org/" + this.state.userName[i]}
         userIcon={this.state.userIcon[i]}
         userPoints={this.state.userPoints[i]}
         userPointsRecent={this.state.userPointsRecent[i]}
@@ -81,6 +82,11 @@ class List extends Component {
             </Col>
           </Row>
         </Grid>
+        <Row className="tableHeads">
+          <Col xs={8} sm={8} md={8} lg={8} xl={8}></Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}><h2>Total</h2></Col>
+          <Col xs={2} sm={2} md={2} lg={2} xl={2}><h2>Recent</h2></Col>
+        </Row>
         <div className="userList">
           {Array.from(Array(10), (_, x) => this.renderUsers(x))}
         </div>
